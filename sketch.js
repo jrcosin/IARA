@@ -32,10 +32,9 @@ function preload() {
 
 function setup() {
   createCanvas(600, 600);
-  imgs[0,1].resize(width, height);
   frameRate (5);
   button = createButton("Escuchame");
-  button.position(10, 300);
+  button.position(10, 500);
   button.mousePressed(habla);
    // Configurar el oscilador
   //osc = new p5.Oscillator();
@@ -46,7 +45,7 @@ function setup() {
   // Iniciar el oscilador
   //osc.start();
   speech = new p5.Speech();  
-  speech.onEnd = textoTermino;
+  //speech.onEnd = textoTermino;
   speech.setPitch(3);
   speech.setRate(1);
 
@@ -56,15 +55,15 @@ function habla() {
   estaHablando = true; 
 }
 
-function textoTermino() {
+/*function textoTermino() {
   estaHablando = false;
   speech.interrupt = true;
-}
+} */
   
   
   function generarVoz(){
     if (estaHablando) { 
-    speech.speak('¡Hola! ¿Qué tal? Yo soy Iara y te doy la bienvenida al ¡Colectivo de palabras!. Vení, subite que te llevo a dar un paseo por mi mundo, agarrate del que tenés al lado y ¡no lo sueltes! que si tropezamos ¡caemos juntos! Empezamos aquí, este es el punto cero, te preguntarás dónde estoy, estoy aquí, aquí y también aquí, pero siempre aquí, en la virtualidad. Era un chiste, ¿querés jugar?, vení que te cuento. Estamos en un lugar grande donde yo estoy proyectada, porque no soy de carne y hueso como vos, soy de códigos y números'); 
+      speech.speak('¡Hola! ¿Qué tal? Yo soy Iara y te doy la bienvenida al ¡Colectivo de palabras!. Vení, subite que te llevo a dar un paseo por mi mundo, agarrate del que tenés al lado y ¡no lo sueltes! que si tropezamos ¡caemos juntos!. Empezamos aquí, este es el punto cero, te preguntarás dónde estoy, estoy aquí, aquí y también aquí, pero siempre aquí, en la virtualidad. Era un chiste, ¿querés jugar?, vení que te cuento. Estamos en un lugar grande donde yo estoy proyectada, porque no soy de carne y hueso como vos, soy de códigos y números, así que me verás en una imagen proyectada en una pared, y a mi lado, las reglas del juego que te iré contando a continuación.'); 
      
     }
   }
@@ -136,11 +135,12 @@ function tintGradual(){
 
 function draw() {
   background(200);
-  image(imgs[currentImgIndex], 0, 0, 400, 400);
+  image(imgs[currentImgIndex], 0, 0, 600, 600);
   //applyGlitch(); 
   tintGradual();
   updatePixels();
   moverBoca();
+  generarVoz();
   nombreAparicion();
   palabraAparicion();
  // let frequency = map(mouseX, 0, width, 100, 1200); // Mapear la posición del mouse a una frecuencia
