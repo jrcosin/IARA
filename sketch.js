@@ -48,6 +48,7 @@ function setup() {
   speech.onEnd = textoTermino;
   speech.setPitch(3);
   speech.setRate(1);
+  speech.setLang(es-AR)
 
 }
 
@@ -57,7 +58,7 @@ function habla() {
 
 function textoTermino() {
   estaHablando = false;
-  speech.interrupt = true;
+  speech.cancel();
 } 
   
   
