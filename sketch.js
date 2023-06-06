@@ -12,9 +12,10 @@ let b = 0;
 let x;
 let y;
 let button; 
+let estaHablando = true;
+speech = new p5.Speech(); 
+
     
-
-
 function preload() {
   img = loadImage('IARA1.jpg')
 
@@ -33,21 +34,35 @@ function setup() {
   frameRate (5);
   button = createButton("Escúchame");
   button.position(10, 300);
-  button.mousePressed(changeText);
+  button.mousePressed(generarVoz);
    // Configurar el oscilador
-  osc = new p5.Oscillator();
-  osc.setType('sine'); // Tipo de forma de onda del oscilador (por ejemplo, 'sine', 'triangle', 'square', 'sawtooth')
-  osc.freq(440); // Frecuencia del oscilador (440 Hz es el La central)
-  osc.amp(0.5); // Amplitud del oscilador (valor entre 0 y 1)
+  //osc = new p5.Oscillator();
+  //osc.setType('sine'); // Tipo de forma de onda del oscilador (por ejemplo, 'sine', 'triangle', 'square', 'sawtooth')
+  //osc.freq(440); // Frecuencia del oscilador (440 Hz es el La central)
+  //osc.amp(0.5); // Amplitud del oscilador (valor entre 0 y 1)
   
   // Iniciar el oscilador
-  osc.start();
+  //osc.start();
+  speech = new p5.Speech();  
+  speech.onEnd = textoTermino;
+  speech.setPitch(3);
+  speech.setRate(0.8);
 
 }
 
-function changeText() {
-  button.html("¡Me estás escuchando!");
+
+function textoTermino() {
+  estaHablando = false;
+  speech.interrupt = true;
 }
+  
+  
+  function generarVoz(){
+    if (estaHablando) { 
+    speech.speak('¡Hola! ¿Qué tal? Yo soy Iara y te doy la bienvenida al ¡Colectivo de palabras! (música). Vení, subite que te llevo a dar un paseo por mi mundo, agarrate del que tenés al lado y ¡no lo sueltes! que si tropezamos ¡caemos juntos! Empezamos aquí, este es el punto cero, te preguntarás dónde estoy, estoy aquí, aquí y también aquí, pero siempre aquí, en la virtualidad. Era un chiste, ¿querés jugar?, vení que te cuento. Estamos en un lugar grande donde yo estoy proyectada, porque no soy de carne y hueso como vos, soy de códigos y números'); 
+     
+    }
+  }
 
 function generateRandomCoordinates() {
   let insideSquare = true;
@@ -122,7 +137,7 @@ function draw() {
   updatePixels();
   nombreAparicion();
   palabraAparicion();
-  let frequency = map(mouseX, 0, width, 100, 1200); // Mapear la posición del mouse a una frecuencia
-  osc.freq(frequency); // Actualizar la frecuencia del oscilador
+ // let frequency = map(mouseX, 0, width, 100, 1200); // Mapear la posición del mouse a una frecuencia
+  // osc.freq(frequency); // Actualizar la frecuencia del oscilador
 }
 
