@@ -64,7 +64,7 @@ function textoTermino() {
   
   function generarVoz(){
     if (estaHablando) { 
-      speech.speak('¡Hola Habitante cibernético!  Bienvenido a la presentacion del Colectivo de Palabras. Yo soy Iara (Inteligencia Artificial de la República Argentina). Soy el avatar de una niña creado para ser asistente virtual dentro de una Instalación inmersiva, llamada el colectivo de palabras. Mi objetivo será jugar con otros niños, y que juntos creemos un Poema colectivo con las palabras más significativas y bellas que se nos ocurran. Espero que te guste esta idea y vengas a jugar conmigo. Es tu turno para pensar en la palabras que más te guste'); 
+      speech.speak('¡Hola Habitante cibernético!  Bienvenido a la presentacion del Colectivo de Palabras. Yo soy Iara (Inteligencia Artificial de la República Argentina). Soy el avatar de una niña creado para ser asistente virtual dentro de una Instalación inmersiva, llamada el colectivo de palabras. Mi objetivo será jugar con otros niños, y que juntos creemos un Poema colectivo con las palabras más significativas y bellas que se nos ocurran. Espero que te guste esta idea y vengas a jugar conmigo. Es tu turno para pensar en la palabra que más te guste'); 
      
     }
   }
