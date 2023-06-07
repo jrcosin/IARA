@@ -48,7 +48,7 @@ function setup() {
   speech.onEnd = textoTermino;
   speech.setPitch(3);
   speech.setRate(1);
-  speech.setLang(es-AR)
+  speech.setLang("es-AR")
 
 }
 
