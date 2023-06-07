@@ -13,4 +13,6 @@ button {
   color: #ffffff;
   border: none;
   border-radius: 4px;
+  width: 50px; /* Ancho del botón */
+  height: 30px; /* Altura del botón */
 }
