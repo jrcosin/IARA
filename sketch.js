@@ -31,7 +31,7 @@ function preload() {
   
 
 function setup() {
-  createCanvas(1200, 900);
+  createCanvas(800, 800);
   frameRate (5);
   button = createButton("Escuchame");
   button.position(10, 500);
@@ -136,7 +136,7 @@ function tintGradual(){
 
 function draw() {
   background(200);
-  image(imgs[currentImgIndex], 0, 0, 1200, 900);
+  image(imgs[currentImgIndex], 0, 0, 800, 800);
   //applyGlitch(); 
   //tintGradual();
   updatePixels();
